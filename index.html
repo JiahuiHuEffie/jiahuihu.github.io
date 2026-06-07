@@ -1,98 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jiahui Hu | Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Research Website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Navigation -->
-    <header>
-        <div class="nav-container">
-            <div class="logo">JH</div>
-            <nav>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#research">Research</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
+    <header class="site-header">
+        <div class="header-inner"></div>
     </header>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Hi, I'm <span class="highlight">Jiahui Hu</span></h1>
-            <p>
-                AI Scientist · Atmospheric Researcher · ML for Space Weather  
-                Building physics-aware models and next-generation AI systems.
-            </p>
-            <a class="btn" href="#projects">Explore My Work</a>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>
-            I’m a researcher working on atmospheric/space-weather modeling, 
-            machine-learning surrogates, and multi-scale CNN-Transformer architectures. 
-            My work spans WACCM-X modeling, ripple recognition, and large-scale 
-            physics-informed ML systems.
-        </p>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="section">
-        <h2>Featured Projects</h2>
-
-        <div class="card-grid">
-            <div class="card">
-                <h3>CT-MVP: Multivariable Masked Imputation Model</h3>
-                <p>Multi-variable CNN+Transformer system for reconstructing WACCM-X atmospheric profiles.</p>
+    <div class="page-layout">
+        <main>
+        <section class="hero" id="about">
+            <div class="hero-grid">
+                <div class="hero-image">
+                    <img src="Profile photo.PNG" alt="Portrait of Jiahui Hu">
+                </div>
+                <div class="hero-details">
+                    <div class="hero-header">
+                        <h1>Jiahui (Jovie) Hu</h1>
+                        <p class="name-pronunciation">/jee-ah-hway/</p>
+                        <p class="eyebrow">Research Scientist</p>
+                    </div>
+                    <div class="hero-meta">
+                        <p>Department of Physical Sciences, Embry-Riddle Aeronautical University</p>
+                        <p><a href="mailto:huj7@erau.edu">huj7@erau.edu</a></p>
+                    </div>
+                </div>
+                <div class="hero-description">
+                    <p>A passionate researcher with 6 years of academic experience in unmanned aerial vehicles, space weather data assimilation, and machine learning techniques. I develop physics-informed models and AI-driven frameworks to improve atmospheric state prediction and ionospheric data reconstruction.</p>
+                </div>
+                <div class="research-focus" aria-label="Research focus areas">
+                    <span>Atmospheric Science</span>
+                    <span>Machine Learning</span>
+                    <span>Physics-Informed AI</span>
+                    <span>Data Assimilation</span>
+                </div>
             </div>
+        </section>
 
-            <div class="card">
-                <h3>Ripple Recognition Pipeline</h3>
-                <p>Deep learning system for OH airglow ripple detection, smoothing, and contour extraction.</p>
+        <section class="content-section" id="current-project">
+            <div class="section-header">
+                <p class="section-overline">Current Project</p>
             </div>
+            <div class="project-grid">
+                <div class="project-card project-card--combined">
+                    <article class="project-card-grid project-entry">
+                        <div class="project-intro">
+                            <h3>CAM-NET: Whole-Atmosphere Prediction</h3>
+                            <p class="project-tagline">AI-driven foundation model for thermosphere and ionosphere extension with physics-informed learning.</p>
+                        </div>
+                        <div class="project-visual project-visual--image project-visual--wide">
+                            <img src="CAM-NET.png" alt="CAM-NET whole-atmosphere prediction visualization">
+                        </div>
+                        <div class="project-details">
+                            <p>Currently developing CAM-NET to support rapid atmospheric state forecasting by combining physics-informed models and machine learning techniques. This project focuses on improving operational readiness while maintaining strong physical consistency.</p>
+                            <ul>
+                                <li>Designed model architecture for high-precision atmospheric prediction with a large speedup compared to conventional simulations.</li>
+                                <li>Implemented PI-MVTI to reconstruct missing atmospheric LiDAR observations while enforcing mass conservation and buoyancy constraints.</li>
+                                <li>Evaluated results with quantitative metrics and validation against independent datasets.</li>
+                            </ul>
+                            <p><strong>Expected result:</strong> a robust framework for practical atmospheric and ionospheric prediction, with an emphasis on physical consistency and operational readiness.</p>
+                            <p class="preprint"><strong>Preprint:</strong> <a href="https://arxiv.org/abs/2506.19340" target="_blank">https://arxiv.org/abs/2506.19340</a></p>
 
-            <div class="card">
-                <h3>CAM-NET & Tracer Surrogates</h3>
-                <p>AI surrogate models for mesospheric tracers using Makani-SFNO and hybrid architectures.</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card-grid project-entry">
+                        <div class="project-intro">
+                            <h3>Ripple Recognition</h3>
+                            <p class="project-tagline">Detect and characterize ionospheric ripple patterns in atmospheric fields.</p>
+                        </div>
+                        <div class="project-visual project-visual--image project-visual--balanced">
+                            <img src="RRP.png" alt="Ripple Recognition visualization">
+                        </div>
+                        <div class="project-details">
+                            <p>Identify and characterize ionospheric ripple patterns using model-driven detection and signal analysis. This projection supports better understanding of atmospheric disturbance signatures in the upper atmosphere.</p>
+                            <ul>
+                                <li>Detected ripple structures in electron density and ion drift fields with a physics-informed classifier.</li>
+                                <li>Combined time-series features and spatial gradients to improve recognition accuracy.</li>
+                                <li>Studied ripple evolution in response to geomagnetic storms and atmospheric forcing.</li>
+                            </ul>
+                            <p class="preprint"><strong>Preprint:</strong> <a href="https://arxiv.org/abs/2603.03669" target="_blank">https://arxiv.org/abs/2603.03669</a></p>
+                        </div>
+                    </article>
+
+                    <article class="project-card-grid project-entry">
+                        <div class="project-intro">
+                            <h3>Data Imputation</h3>
+                            <p class="project-tagline">Physics-informed reconstruction of missing atmospheric and ionospheric measurements.</p>
+                        </div>
+                        <div class="project-visual project-visual--image project-visual--balanced">
+                            <img src="CT-MVP.png" alt="Data Imputation visualization">
+                        </div>
+                        <div class="project-details">
+                            <p>Reconstruct missing atmospheric and ionospheric observations using physics-informed imputation and machine learning. This projection focuses on closing data gaps from LiDAR, radar, and satellite measurements.</p>
+                            <ul>
+                                <li>Applied PI-MVTI to infer missing data while preserving mass conservation and physical consistency.</li>
+                                <li>Integrated observation uncertainty and representation error into the imputation model.</li>
+                                <li>Prepared projections for higher-resolution atmospheric state recovery.</li>
+                            </ul>
+                            <p class="preprint"><strong>Publication:</strong> <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JH000656" target="_blank">https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JH000656</a></p>
+
+                        </div>
+                    </article>
+                </div>
+
             </div>
+        </section>
 
-            <div class="card">
-                <h3>Snowboarding AI Social App</h3>
-                <p>AI-powered personal coaching and social recommender platform for snowboarders.</p>
+        <section class="content-section" id="research">
+            <div class="section-header">
+                <p class="section-overline">Research</p>
             </div>
-        </div>
-    </section>
+            <div class="research-block">
+                <div class="experience-card">
+                    <h3>Postdoctoral Researcher</h3>
+                    <p class="meta"><span>Embry-Riddle Aeronautical University</span><span class="date">Jun 2024 – Present</span></p>
+                    <ul>
+                        <li>Contributing to CAM-NET, an AI-driven foundation model for high-precision atmospheric prediction with 3–4 orders of magnitude speedup over conventional simulations.</li>
+                        <li>Developing a physics-informed multi-variable transformer model (PI-MVTI) to reconstruct missing atmospheric LiDAR data with physical constraints such as mass conservation and buoyancy.</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <h3>Graduate Research Assistant</h3>
+                    <p class="meta"><span>Space Weather Lab, Illinois Institute of Technology</span><span class="date">Jun 2021 – Jun 2024</span></p>
+                    <ul>
+                        <li>Developed EMPIRE, a Kalman filter-based data assimilation method to reduce discrepancies between observations and model outputs.</li>
+                        <li>Investigated Nighttime Ionospheric Localized Enhancement (NILE) and visualized electron density patterns during geomagnetic storms.</li>
+                        <li>Integrated a Kalman smoother into EMPIRE and designed representation error metrics to improve state estimation accuracy.</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
+                    <h3>Graduate Visitor Program Fellow</h3>
+                    <p class="meta"><span>High Altitude Observatory, NCAR</span><span class="date">Jun 2023 – Aug 2023</span></p>
+                    <ul>
+                        <li>Implemented WACCM-X coupled with the Data Assimilation Research Testbed (DART) for upper atmospheric simulation and assimilation.</li>
+                        <li>Visualized atmospheric drivers using Python and analyzed NILE mechanisms.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    <!-- Research -->
-    <section id="research" class="section">
-        <h2>Research</h2>
-        <ul class="pub-list">
-            <li><strong>WACCM-X Surrogate Modeling</strong> – CNN+Transformer & SFNO architectures for atmospheric prediction.</li>
-            <li><strong>Ripple Recognition</strong> – Automated instability detection from airglow imagers.</li>
-            <li><strong>Space-Weather ML</strong> – Physics-aware imputation & assimilation of dynamical variables.</li>
-        </ul>
-    </section>
+        <section class="content-section" id="publications">
+            <div class="section-header">
+                <p class="section-overline">Publications</p>
+            </div>
+            <div class="publications-block">
+                <article class="publication-item">
+                    <p>Hu, J., López Rubio, A., Chartier, A., McDonald, S., & Datta-Barua, S. (<span class="date">2024</span>). Quantification of representation error in the neutral winds and ion drifts using data assimilation. <em>Space Weather</em>, 22, e2023SW003609.</p>
+                </article>
+                <article class="publication-item">
+                    <p>Hu, J., McDonald, S., Chartier, A., López Rubio, A., & Datta-Barua, S. (<span class="date">2024</span>). Data assimilation of ion drift measurements for estimation of ionospheric plasma drivers. <em>Space Weather</em>, 22, e2024SW003933.</p>
+                </article>
+            </div>
+        </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:jiahuihu@email.com">jiahuihu@email.com</a></p>
-        <p>GitHub: <a href="https://github.com/jiahuihu" target="_blank">github.com/jiahuihu</a></p>
-        <p>LinkedIn: <a href="#" target="_blank">Your LinkedIn</a></p>
-    </section>
+        <section class="content-section" id="education">
+            <div class="section-header">
+                <p class="section-overline">Education</p>
+            </div>
+            <div class="education-block">
+                <div class="education-item">
+                    <h3>Georgia Institute of Technology</h3>
+                    <p><span>Master of Science, Computer Science (Specialization: Machine Learning)</span><span class="date">Expected Dec 2027</span></p>
+                </div>
+                <div class="education-item">
+                    <h3>Illinois Institute of Technology</h3>
+                    <p><span>Doctor of Philosophy, Aerospace Engineering</span><span class="date">May 2024</span></p>
+                    <p><span>Master of Engineering, Mechanical Engineering</span><span class="date">May 2020</span></p>
+                    <p><span>Bachelor of Science, Mechanical Engineering</span><span class="date">May 2020</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" id="skills">
+            <div class="section-header">
+                <p class="section-overline">Skills</p>
+            </div>
+            <div class="skills-block">
+                <div class="skill-item">
+                    <h4>Programming</h4>
+                    <p>Python, MATLAB, C++, Fortran</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Tools</h4>
+                    <p>Creo/Inventor, ANSYS, Jupyter, GitHub, Visual Studio</p>
+                </div>
+                <div class="skill-item">
+                    <h4>Platforms</h4>
+                    <p>Windows, macOS, Linux</p>
+                </div>
+            </div>
+        </section>
+
+        </main>
+
+        <aside class="sidebar">
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#current-project">Current Project</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                </ul>
+            </nav>
+        </aside>
+    </div>
 
     <footer>
-        © 2025 Jiahui Hu — Built with ❤️ using GitHub Pages
+        <p>&copy; 2026 Jiahui Hu.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-

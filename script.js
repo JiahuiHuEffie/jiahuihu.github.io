@@ -1,10 +1,15 @@
-// Smooth scroll for nav links
-document.querySelectorAll("nav a").forEach(link => {
-    link.addEventListener("click", e => {
+// Minimalist JavaScript for Personal Research Website
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(link.getAttribute("href")).scrollIntoView({
-            behavior: "smooth"
-        });
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
-
