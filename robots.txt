@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jiahuihueffie.github.io/jiahuihu.github.io/sitemap.xml
