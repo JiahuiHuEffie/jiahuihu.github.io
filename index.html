@@ -53,7 +53,7 @@
 
         <section class="content-section" id="current-project">
             <div class="section-header">
-                <p class="section-overline">Current Project</p>
+                <p class="section-overline">Current Projects</p>
             </div>
             <div class="project-grid">
                 <div class="project-card project-card--combined">
@@ -75,6 +75,25 @@
                             <p><strong>Expected result:</strong> a robust framework for practical atmospheric and ionospheric prediction, with an emphasis on physical consistency and operational readiness.</p>
                             <p class="preprint"><strong>Preprint:</strong> <a href="https://arxiv.org/abs/2506.19340" target="_blank">https://arxiv.org/abs/2506.19340</a></p>
 
+                        </div>
+                    </article>
+
+                    <article class="project-card-grid project-entry">
+                        <div class="project-intro">
+                            <h3>Conditional Diffusion Model</h3>
+                            <p class="project-tagline">Generative atmospheric perturbation prediction with conditional reverse diffusion.</p>
+                        </div>
+                        <div class="project-visual project-visual--image project-visual--balanced">
+                            <img src="DiffusionMapping.png" alt="Conditional diffusion model workflow for atmospheric perturbation prediction">
+                        </div>
+                        <div class="project-details">
+                            <p>Developing a conditional diffusion framework to predict temperature perturbation fields from WACCM-X dynamics. The model uses zonal wind and smoothed background temperature as conditioning information, then learns the reverse diffusion process needed to generate physically meaningful perturbation maps.</p>
+                            <ul>
+                                <li>Prepared 3-hourly WACCM-X samples across 16 fixed geographic locations, separating background temperature from perturbation structure.</li>
+                                <li>Constructed weekly input-target windows for conditional training using zonal wind, background temperature, and target perturbation fields.</li>
+                                <li>Evaluated held-out predictions with correlation, MAE, RMSE, relative total variation, and power-spectrum comparisons.</li>
+                            </ul>
+                            <p><strong>Expected result:</strong> a generative model that maps atmospheric conditions to realistic temperature perturbation fields for fast analysis and forecasting support.</p>
                         </div>
                     </article>
 
@@ -127,8 +146,16 @@
             </div>
             <div class="research-block">
                 <div class="experience-card">
+                    <h3>Research Scientist</h3>
+                    <p class="meta"><span>Embry-Riddle Aeronautical University</span><span class="date">Expected Jul 2026</span></p>
+                    <ul>
+                        <li>Leading research in atmospheric science, machine learning, physics-informed AI, and data assimilation.</li>
+                        <li>Developing AI-driven frameworks for atmospheric and ionospheric prediction with an emphasis on physical consistency.</li>
+                    </ul>
+                </div>
+                <div class="experience-card">
                     <h3>Postdoctoral Researcher</h3>
-                    <p class="meta"><span>Embry-Riddle Aeronautical University</span><span class="date">Jun 2024 – Present</span></p>
+                    <p class="meta"><span>Embry-Riddle Aeronautical University</span><span class="date">Jun 2024 – Jun 2026</span></p>
                     <ul>
                         <li>Contributing to CAM-NET, an AI-driven foundation model for high-precision atmospheric prediction with 3–4 orders of magnitude speedup over conventional simulations.</li>
                         <li>Developing a physics-informed multi-variable transformer model (PI-MVTI) to reconstruct missing atmospheric LiDAR data with physical constraints such as mass conservation and buoyancy.</li>
@@ -212,7 +239,7 @@
             <nav class="site-nav">
                 <ul>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#current-project">Current Project</a></li>
+                    <li><a href="#current-project">Current Projects</a></li>
                     <li><a href="#research">Research</a></li>
                     <li><a href="#publications">Publications</a></li>
                     <li><a href="#education">Education</a></li>
