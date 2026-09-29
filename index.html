@@ -60,6 +60,25 @@
                 <div class="project-card project-card--combined">
                     <article class="project-card-grid project-entry">
                         <div class="project-intro">
+                            <h3>Conditional Diffusion Model</h3>
+                            <p class="project-tagline">Generative atmospheric perturbation prediction with conditional reverse diffusion.</p>
+                        </div>
+                        <div class="project-visual project-visual--image project-visual--balanced">
+                            <img src="DiffusionMapping.png" alt="Conditional diffusion model workflow for atmospheric perturbation prediction">
+                        </div>
+                        <div class="project-details">
+                            <p>Developing a conditional diffusion framework to predict temperature perturbation fields from WACCM-X dynamics. The model uses zonal wind and smoothed background temperature as conditioning information, then learns the reverse diffusion process needed to generate physically meaningful perturbation maps.</p>
+                            <ul>
+                                <li>Prepared 3-hourly WACCM-X samples across 16 fixed geographic locations, separating background temperature from perturbation structure.</li>
+                                <li>Constructed weekly input-target windows for conditional training using zonal wind, background temperature, and target perturbation fields.</li>
+                                <li>Evaluated held-out predictions with correlation, MAE, RMSE, relative total variation, and power-spectrum comparisons.</li>
+                            </ul>
+                            <p><strong>Expected result:</strong> a generative model that maps atmospheric conditions to realistic temperature perturbation fields for fast analysis and forecasting support.</p>
+                        </div>
+                    </article>
+
+                    <article class="project-card-grid project-entry">
+                        <div class="project-intro">
                             <h3>CAM-NET: Whole-Atmosphere Prediction</h3>
                             <p class="project-tagline">AI-driven foundation model for thermosphere and ionosphere extension with physics-informed learning.</p>
                         </div>
@@ -76,25 +95,6 @@
                             <p><strong>Expected result:</strong> a robust framework for practical atmospheric and ionospheric prediction, with an emphasis on physical consistency and operational readiness.</p>
                             <p class="preprint"><strong>Preprint:</strong> <a href="https://arxiv.org/abs/2506.19340" target="_blank">https://arxiv.org/abs/2506.19340</a></p>
 
-                        </div>
-                    </article>
-
-                    <article class="project-card-grid project-entry">
-                        <div class="project-intro">
-                            <h3>Conditional Diffusion Model</h3>
-                            <p class="project-tagline">Generative atmospheric perturbation prediction with conditional reverse diffusion.</p>
-                        </div>
-                        <div class="project-visual project-visual--image project-visual--balanced">
-                            <img src="DiffusionMapping.png" alt="Conditional diffusion model workflow for atmospheric perturbation prediction">
-                        </div>
-                        <div class="project-details">
-                            <p>Developing a conditional diffusion framework to predict temperature perturbation fields from WACCM-X dynamics. The model uses zonal wind and smoothed background temperature as conditioning information, then learns the reverse diffusion process needed to generate physically meaningful perturbation maps.</p>
-                            <ul>
-                                <li>Prepared 3-hourly WACCM-X samples across 16 fixed geographic locations, separating background temperature from perturbation structure.</li>
-                                <li>Constructed weekly input-target windows for conditional training using zonal wind, background temperature, and target perturbation fields.</li>
-                                <li>Evaluated held-out predictions with correlation, MAE, RMSE, relative total variation, and power-spectrum comparisons.</li>
-                            </ul>
-                            <p><strong>Expected result:</strong> a generative model that maps atmospheric conditions to realistic temperature perturbation fields for fast analysis and forecasting support.</p>
                         </div>
                     </article>
 
@@ -214,23 +214,29 @@
             </div>
         </section>
 
-        <section class="content-section" id="skills">
+        <section class="content-section" id="invited-talks">
             <div class="section-header">
-                <p class="section-overline">Skills</p>
+                <p class="section-overline">Invited Talks</p>
             </div>
-            <div class="skills-block">
-                <div class="skill-item">
-                    <h4>Programming</h4>
-                    <p>Python, MATLAB, C++, Fortran</p>
-                </div>
-                <div class="skill-item">
-                    <h4>Tools</h4>
-                    <p>Creo/Inventor, ANSYS, Jupyter, GitHub, Visual Studio</p>
-                </div>
-                <div class="skill-item">
-                    <h4>Platforms</h4>
-                    <p>Windows, macOS, Linux</p>
-                </div>
+            <div class="publications-block">
+                <article class="publication-item">
+                    <p>Hu, J., Pedatella, N., Blinstrubas, G. (presenter), & Datta-Barua, S. (<span class="date">2025</span>). Investigating storm-time dynamics with high-resolution WACCM-X+DART data. International Union of Radio Science (URSI), Sydney, Australia.</p>
+                </article>
+                <article class="publication-item">
+                    <p>Hu, J., & Dong, W. (<span class="date">2025</span>). CAM-NET: An AI foundation model for whole atmosphere forecasting trained on WACCM-X data. Coupling, Energetics and Dynamics of Atmospheric Regions (CEDAR), Des Moines, IA, USA.</p>
+                </article>
+                <article class="publication-item">
+                    <p>Hu, J., & Datta-Barua, S. (<span class="date">2024</span>). Improving a data assimilation algorithm EMPIRE via data augmentation and Kalman smoother integration. Geospace Data Assimilation Working Group (GeoDAWG), virtual.</p>
+                </article>
+                <article class="publication-item">
+                    <p>Hu, J., & Datta-Barua, S. (<span class="date">2024</span>). Developments in data assimilation algorithms for ion drift estimations using a new augmentation method. Stanford Center for Position, Navigation and Time (SCPNT), Palo Alto, CA, USA.</p>
+                </article>
+                <article class="publication-item">
+                    <p>Hu, J., & Datta-Barua, S. (<span class="date">2024</span>). Data assimilation of ion drift measurements for estimation of ionospheric plasma drivers. Coupling, Energetics and Dynamics of Atmospheric Regions (CEDAR), San Diego, CA, USA.</p>
+                </article>
+                <article class="publication-item">
+                    <p>Hu, J., López Rubio, A., & Datta-Barua, S. (<span class="date">2023</span>). Observation error quantification and analysis in data assimilation. Advancing National Space Weather Expertise and Research toward Societal Resilience (ANSWERS) student workshop, virtual.</p>
+                </article>
             </div>
         </section>
 
@@ -244,7 +250,7 @@
                     <li><a href="#research">Research</a></li>
                     <li><a href="#publications">Publications</a></li>
                     <li><a href="#education">Education</a></li>
-                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#invited-talks">Invited Talks</a></li>
                 </ul>
             </nav>
         </aside>
