@@ -4,19 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jiahui (Jovie) Hu | Research Scientist</title>
-    <meta name="description" content="Personal research website for Jiahui (Jovie) Hu, a research scientist working on atmospheric science, machine learning, physics-informed AI, and data assimilation.">
+    <meta name="description" content="Jiahui (Jovie) Hu is a research scientist at Embry-Riddle Aeronautical University working on atmospheric science, machine learning, physics-informed AI, and data assimilation.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://jiahuihueffie.github.io/jiahuihu.github.io/">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <meta property="og:title" content="Jiahui (Jovie) Hu | Research Scientist">
     <meta property="og:description" content="Research in atmospheric science, machine learning, physics-informed AI, and data assimilation.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jiahuihueffie.github.io/jiahuihu.github.io/">
+    <meta property="og:image" content="https://jiahuihueffie.github.io/jiahuihu.github.io/profile.jpg">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jiahui Hu",
+        "alternateName": ["Jovie Hu", "胡佳慧"],
+        "jobTitle": "Research Scientist",
+        "email": "huj7@erau.edu",
+        "url": "https://jiahuihueffie.github.io/jiahuihu.github.io/",
+        "image": "https://jiahuihueffie.github.io/jiahuihu.github.io/profile.jpg",
+        "sameAs": ["https://orcid.org/0000-0003-1998-126X"],
+        "affiliation": {
+            "@type": "CollegeOrUniversity",
+            "name": "Embry-Riddle Aeronautical University"
+        }
+    }
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-inner"></div>
-    </header>
+    <a class="skip-link" href="#about">Skip to content</a>
 
     <div class="page-layout">
         <main>
@@ -24,7 +41,7 @@
             <div class="hero-card">
                 <div class="hero-identity">
                     <div class="hero-image">
-                        <img src="Profile photo.PNG" alt="Portrait of Jiahui Hu">
+                        <img src="profile.jpg" width="720" height="960" alt="Portrait of Jiahui Hu">
                     </div>
                     <div class="hero-identity-copy">
                         <p class="eyebrow">Research Scientist</p>
@@ -32,13 +49,16 @@
                         <p class="name-pronunciation">/jee-ah-hway/ · 胡佳慧</p>
                         <div class="hero-contact">
                             <p>Department of Physical Sciences<br>Embry-Riddle Aeronautical University</p>
-                            <a href="mailto:huj7@erau.edu">huj7@erau.edu</a>
+                            <p class="identity-links">
+                                <a href="mailto:huj7@erau.edu">huj7@erau.edu</a>
+                                <a href="https://orcid.org/0000-0003-1998-126X" target="_blank" rel="noopener noreferrer">ORCID</a>
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="hero-intro">
-                    <p class="hero-lead">I develop physics-informed models and AI-driven frameworks to improve atmospheric & ionospheric state prediction and data reconstruction.</p>
-                    <p class="hero-body">A passionate researcher with six years of academic experience in unmanned aerial vehicles, space weather data assimilation, and machine learning techniques.</p>
+                    <p class="hero-lead">I develop physics-informed models and AI-driven frameworks to improve atmospheric &amp; ionospheric state prediction and data reconstruction.</p>
+                    <p class="hero-body">Ph.D. in aerospace engineering. My work connects data assimilation, whole-atmosphere simulation, and machine learning for the upper atmosphere and ionosphere.</p>
                     <div class="research-focus-group">
                         <p class="research-focus-title">Research Interest</p>
                         <div class="research-focus" aria-label="Research focus areas">
@@ -54,96 +74,82 @@
 
         <section class="content-section" id="current-project">
             <div class="section-header">
-                <p class="section-overline">Current Projects</p>
+                <h2 class="section-overline">Current Projects</h2>
             </div>
             <div class="project-grid">
                 <div class="project-card project-card--combined">
                     <article class="project-card-grid project-entry">
                         <div class="project-intro">
                             <h3>Conditional Diffusion Model</h3>
-                            <p class="project-tagline">Generative atmospheric perturbation prediction with conditional reverse diffusion.</p>
+                            <p class="project-tagline">Generative prediction of atmospheric temperature perturbations from WACCM-X.</p>
                         </div>
-                        <div class="project-visual project-visual--image project-visual--balanced">
-                            <img src="DiffusionMapping.png" alt="Conditional diffusion model workflow for atmospheric perturbation prediction">
-                        </div>
+                        <button class="project-visual project-visual--image project-visual--balanced" type="button" data-enlarge aria-label="Enlarge the conditional diffusion model figure">
+                            <img src="diffusion.jpg" width="1774" height="887" alt="Workflow of a conditional diffusion model that predicts temperature perturbation fields from WACCM-X zonal wind and background temperature" loading="lazy" decoding="async">
+                        </button>
+                        <p class="figure-hint">Select the figure to view it full size.</p>
                         <div class="project-details">
-                            <p>Developing a conditional diffusion framework to predict temperature perturbation fields from WACCM-X dynamics. The model uses zonal wind and smoothed background temperature as conditioning information, then learns the reverse diffusion process needed to generate physically meaningful perturbation maps.</p>
+                            <p>This model learns the reverse diffusion process that turns zonal wind and a smoothed background temperature into a temperature perturbation field. Training uses 3-hourly WACCM-X samples at 16 fixed locations, packed into weekly input-target windows.</p>
                             <ul>
-                                <li>Prepared 3-hourly WACCM-X samples across 16 fixed geographic locations, separating background temperature from perturbation structure.</li>
-                                <li>Constructed weekly input-target windows for conditional training using zonal wind, background temperature, and target perturbation fields.</li>
-                                <li>Evaluated held-out predictions with correlation, MAE, RMSE, relative total variation, and power-spectrum comparisons.</li>
+                                <li>Separated background temperature from the perturbation field before constructing training pairs.</li>
+                                <li>Conditioned generation on zonal wind and background temperature.</li>
+                                <li>Checked held-out predictions with correlation, MAE, RMSE, relative total variation, and power spectra.</li>
                             </ul>
-                            <p><strong>Expected result:</strong> a generative model that maps atmospheric conditions to realistic temperature perturbation fields for fast analysis and forecasting support.</p>
                         </div>
                     </article>
 
                     <article class="project-card-grid project-entry">
                         <div class="project-intro">
                             <h3>CAM-NET: Whole-Atmosphere Prediction</h3>
-                            <p class="project-tagline">AI-driven foundation model for thermosphere and ionosphere extension with physics-informed learning.</p>
+                            <p class="project-tagline">A spherical neural operator that emulates WACCM-X from the surface to the ionosphere.</p>
                         </div>
-                        <div class="project-visual project-visual--image project-visual--wide">
-                            <img src="CAM-NET.png" alt="CAM-NET whole-atmosphere prediction visualization">
-                        </div>
+                        <button class="project-visual project-visual--image project-visual--wide" type="button" data-enlarge aria-label="Enlarge the CAM-NET figure">
+                            <img src="cam-net.jpg" width="1514" height="453" alt="CAM-NET architecture: an SFNO backbone for atmospheric dynamics and a lightweight module for ionospheric variables" loading="lazy" decoding="async">
+                        </button>
                         <div class="project-details">
-                            <p>Currently developing CAM-NET to support rapid atmospheric state forecasting by combining physics-informed models and machine learning techniques. This project focuses on improving operational readiness while maintaining strong physical consistency.</p>
-                            <ul>
-                                <li>Designed model architecture for high-precision atmospheric prediction with a large speedup compared to conventional simulations.</li>
-                                <li>Implemented PI-MVTI to reconstruct missing atmospheric LiDAR observations while enforcing mass conservation and buoyancy constraints.</li>
-                                <li>Evaluated results with quantitative metrics and validation against independent datasets.</li>
-                            </ul>
-                            <p><strong>Expected result:</strong> a robust framework for practical atmospheric and ionospheric prediction, with an emphasis on physical consistency and operational readiness.</p>
-                            <p class="preprint"><strong>Preprint:</strong> <a href="https://arxiv.org/abs/2506.19340" target="_blank">https://arxiv.org/abs/2506.19340</a></p>
-
+                            <p>CAM-NET is a geometry-aware Spherical Fourier Neural Operator trained on WACCM-X. A frozen atmospheric backbone predicts neutral winds, temperature, and vertical velocity; a lighter module then extends that state to electron density and zonal ion drift. On a held-out year it keeps the dominant ionosphere-thermosphere structure through multi-day rollouts, at about 1,000 times the speed of the physics model. It is meant for ensembles and sensitivity studies, not as a replacement for WACCM-X.</p>
+                            <p class="preprint"><a class="paper-link" href="https://arxiv.org/abs/2506.19340" target="_blank" rel="noopener noreferrer">Preprint on arXiv</a></p>
                         </div>
                     </article>
 
                     <article class="project-card-grid project-entry">
                         <div class="project-intro">
                             <h3>Ripple Recognition</h3>
-                            <p class="project-tagline">Detect and characterize ionospheric ripple patterns in atmospheric fields.</p>
+                            <p class="project-tagline">Automatic detection of short-lived ripple structures in mesospheric airglow images.</p>
                         </div>
-                        <div class="project-visual project-visual--image project-visual--balanced">
-                            <img src="RRP.png" alt="Ripple Recognition visualization">
-                        </div>
+                        <button class="project-visual project-visual--image project-visual--balanced" type="button" data-enlarge aria-label="Enlarge the ripple recognition figure">
+                            <img src="ripple.jpg" width="1774" height="887" alt="SE-CNN pipeline that detects ripple-scale gravity wave structures in all-sky OH airglow images" loading="lazy" decoding="async">
+                        </button>
                         <div class="project-details">
-                            <p>Identify and characterize ionospheric ripple patterns using model-driven detection and signal analysis. This projection supports better understanding of atmospheric disturbance signatures in the upper atmosphere.</p>
+                            <p>Ripples are 5–15 km instability signatures near 87 km, and they are easy to miss by eye. A squeeze-and-excitation convolutional network, trained on 41×41 patches from all-sky OH images at Yucca Ridge, finds them with a consistent rule across a long image archive.</p>
                             <ul>
-                                <li>Detected ripple structures in electron density and ion drift fields with a physics-informed classifier.</li>
-                                <li>Combined time-series features and spatial gradients to improve recognition accuracy.</li>
-                                <li>Studied ripple evolution in response to geomagnetic storms and atmospheric forcing.</li>
+                                <li>92% F1 score on held-out image patches, with high precision and recall.</li>
+                                <li>Recovers about 90% of a previous manual event catalog and adds faint events that the catalog missed.</li>
+                                <li>Turns the detections into occurrence, season, and lifetime statistics.</li>
                             </ul>
-                            <p class="preprint"><strong>Preprint:</strong> <a href="https://arxiv.org/abs/2603.03669" target="_blank">https://arxiv.org/abs/2603.03669</a></p>
+                            <p class="preprint"><a class="paper-link" href="https://arxiv.org/abs/2603.03669" target="_blank" rel="noopener noreferrer">Preprint on arXiv</a></p>
                         </div>
                     </article>
 
                     <article class="project-card-grid project-entry">
                         <div class="project-intro">
-                            <h3>Data Imputation</h3>
-                            <p class="project-tagline">Physics-informed reconstruction of missing atmospheric and ionospheric measurements.</p>
+                            <h3>CT-MVP: Data Imputation</h3>
+                            <p class="project-tagline">A CNN-transformer that reconstructs long gaps in temperature and wind.</p>
                         </div>
-                        <div class="project-visual project-visual--image project-visual--balanced">
-                            <img src="CT-MVP.png" alt="Data Imputation visualization">
-                        </div>
+                        <button class="project-visual project-visual--image project-visual--balanced" type="button" data-enlarge aria-label="Enlarge the CT-MVP data imputation figure">
+                            <img src="imputation.jpg" width="1770" height="888" alt="CT-MVP workflow for imputing missing multivariate atmospheric fields" loading="lazy" decoding="async">
+                        </button>
                         <div class="project-details">
-                            <p>Reconstruct missing atmospheric and ionospheric observations using physics-informed imputation and machine learning. This projection focuses on closing data gaps from LiDAR, radar, and satellite measurements.</p>
-                            <ul>
-                                <li>Applied PI-MVTI to infer missing data while preserving mass conservation and physical consistency.</li>
-                                <li>Integrated observation uncertainty and representation error into the imputation model.</li>
-                                <li>Prepared projections for higher-resolution atmospheric state recovery.</li>
-                            </ul>
-                            <p class="preprint"><strong>Publication:</strong> <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JH000656" target="_blank">https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025JH000656</a></p>
-
+                            <p>CT-MVP pairs convolutions, which capture local structure, with a transformer that follows dependencies across time and altitude. It was trained and tested on 13 years of SD-WACCM-X fields so that gap patterns could be controlled. It beats standard imputation methods when the missing stretches are long, and it is a step toward filling real gaps in lidar, radar, and satellite records.</p>
+                            <p class="preprint"><a class="paper-link" href="https://doi.org/10.1029/2025JH000656" target="_blank" rel="noopener noreferrer">Journal article</a></p>
                         </div>
                     </article>
                 </div>
-
             </div>
         </section>
 
         <section class="content-section" id="research">
             <div class="section-header">
-                <p class="section-overline">Research</p>
+                <h2 class="section-overline">Research</h2>
             </div>
             <div class="research-block">
                 <div class="experience-card">
@@ -151,15 +157,15 @@
                     <p class="meta"><span>Embry-Riddle Aeronautical University</span><span class="date">Jul 2026 – Current</span></p>
                     <ul>
                         <li>Leading research in atmospheric science, machine learning, physics-informed AI, and data assimilation.</li>
-                        <li>Developing AI-driven frameworks for atmospheric and ionospheric prediction with an emphasis on physical consistency.</li>
+                        <li>Developing generative and neural-operator models for atmospheric and ionospheric state estimation.</li>
                     </ul>
                 </div>
                 <div class="experience-card">
                     <h3>Postdoctoral Researcher</h3>
                     <p class="meta"><span>Embry-Riddle Aeronautical University</span><span class="date">Jun 2024 – Jun 2026</span></p>
                     <ul>
-                        <li>Contributing to CAM-NET, an AI-driven foundation model for high-precision atmospheric prediction with 3–4 orders of magnitude speedup over conventional simulations.</li>
-                        <li>Developing a physics-informed multi-variable transformer model (PI-MVTI) to reconstruct missing atmospheric LiDAR data with physical constraints such as mass conservation and buoyancy.</li>
+                        <li>Built CAM-NET, a spherical neural-operator emulator of WACCM-X that reproduces large-scale whole-atmosphere variability about 1,000 times faster than the physics simulation.</li>
+                        <li>Developed CT-MVP, a CNN-transformer that reconstructs missing temperature and wind fields and outperforms standard methods on long gaps.</li>
                     </ul>
                 </div>
                 <div class="experience-card">
@@ -184,21 +190,32 @@
 
         <section class="content-section" id="publications">
             <div class="section-header">
-                <p class="section-overline">Publications</p>
+                <h2 class="section-overline">Publications</h2>
             </div>
             <div class="publications-block">
+                <h3 class="pub-group">Journal articles</h3>
                 <article class="publication-item">
-                    <p>Hu, J., López Rubio, A., Chartier, A., McDonald, S., & Datta-Barua, S. (<span class="date">2024</span>). Quantification of representation error in the neutral winds and ion drifts using data assimilation. <em>Space Weather</em>, 22, e2023SW003609.</p>
+                    <p>Hu, J., Dong, W., &amp; Liu, A. Z. (<span class="date">2026</span>). <a href="https://doi.org/10.1029/2025JH000656">Imputing missing long-term spatiotemporal multivariate atmospheric data with CNN-transformer machine learning</a>. <em>Journal of Geophysical Research: Machine Learning and Computation</em>, 3(2), e2025JH000656.</p>
                 </article>
                 <article class="publication-item">
-                    <p>Hu, J., McDonald, S., Chartier, A., López Rubio, A., & Datta-Barua, S. (<span class="date">2024</span>). Data assimilation of ion drift measurements for estimation of ionospheric plasma drivers. <em>Space Weather</em>, 22, e2024SW003933.</p>
+                    <p>Hu, J., McDonald, S., Chartier, A., López Rubio, A., &amp; Datta-Barua, S. (<span class="date">2024</span>). <a href="https://doi.org/10.1029/2024SW003933">Data assimilation of ion drift measurements for estimation of ionospheric plasma drivers</a>. <em>Space Weather</em>, 22, e2024SW003933.</p>
+                </article>
+                <article class="publication-item">
+                    <p>Hu, J., López Rubio, A., Chartier, A., McDonald, S., &amp; Datta-Barua, S. (<span class="date">2024</span>). <a href="https://doi.org/10.1029/2023SW003609">Quantification of representation error in the neutral winds and ion drifts using data assimilation</a>. <em>Space Weather</em>, 22, e2023SW003609.</p>
+                </article>
+                <h3 class="pub-group">Preprints</h3>
+                <article class="publication-item">
+                    <p>Hu, J., Liu, A., Feener, A., Dong, W., Li, J., &amp; Li, T. (<span class="date">2026</span>). <a href="https://arxiv.org/abs/2603.03669">Automated analysis of ripple-scale gravity wave structures in the mesosphere using convolutional neural networks</a>. arXiv:2603.03669.</p>
+                </article>
+                <article class="publication-item">
+                    <p>Hu, J., &amp; Dong, W. (<span class="date">2025</span>). <a href="https://arxiv.org/abs/2506.19340">A geometry-aware AI emulator for the coupled whole atmosphere from Earth’s surface to the ionosphere and thermosphere</a>. arXiv:2506.19340.</p>
                 </article>
             </div>
         </section>
 
         <section class="content-section" id="education">
             <div class="section-header">
-                <p class="section-overline">Education</p>
+                <h2 class="section-overline">Education</h2>
             </div>
             <div class="education-block">
                 <div class="education-item">
@@ -216,26 +233,26 @@
 
         <section class="content-section" id="invited-talks">
             <div class="section-header">
-                <p class="section-overline">Invited Talks</p>
+                <h2 class="section-overline">Invited Talks</h2>
             </div>
             <div class="publications-block">
                 <article class="publication-item">
-                    <p>Hu, J., Pedatella, N., Blinstrubas, G. (presenter), & Datta-Barua, S. (<span class="date">2025</span>). Investigating storm-time dynamics with high-resolution WACCM-X+DART data. International Union of Radio Science (URSI), Sydney, Australia.</p>
+                    <p>Hu, J., Pedatella, N., Blinstrubas, G. (presenter), &amp; Datta-Barua, S. (<span class="date">2025</span>). Investigating storm-time dynamics with high-resolution WACCM-X+DART data. International Union of Radio Science (URSI), Sydney, Australia.</p>
                 </article>
                 <article class="publication-item">
-                    <p>Hu, J., & Dong, W. (<span class="date">2025</span>). CAM-NET: An AI foundation model for whole atmosphere forecasting trained on WACCM-X data. Coupling, Energetics and Dynamics of Atmospheric Regions (CEDAR), Des Moines, IA, USA.</p>
+                    <p>Hu, J., &amp; Dong, W. (<span class="date">2025</span>). CAM-NET: An AI foundation model for whole atmosphere forecasting trained on WACCM-X data. Coupling, Energetics and Dynamics of Atmospheric Regions (CEDAR), Des Moines, IA, USA.</p>
                 </article>
                 <article class="publication-item">
-                    <p>Hu, J., & Datta-Barua, S. (<span class="date">2024</span>). Improving a data assimilation algorithm EMPIRE via data augmentation and Kalman smoother integration. Geospace Data Assimilation Working Group (GeoDAWG), virtual.</p>
+                    <p>Hu, J., &amp; Datta-Barua, S. (<span class="date">2024</span>). Improving a data assimilation algorithm EMPIRE via data augmentation and Kalman smoother integration. Geospace Data Assimilation Working Group (GeoDAWG), virtual.</p>
                 </article>
                 <article class="publication-item">
-                    <p>Hu, J., & Datta-Barua, S. (<span class="date">2024</span>). Developments in data assimilation algorithms for ion drift estimations using a new augmentation method. Stanford Center for Position, Navigation and Time (SCPNT), Palo Alto, CA, USA.</p>
+                    <p>Hu, J., &amp; Datta-Barua, S. (<span class="date">2024</span>). Developments in data assimilation algorithms for ion drift estimations using a new augmentation method. Stanford Center for Position, Navigation and Time (SCPNT), Palo Alto, CA, USA.</p>
                 </article>
                 <article class="publication-item">
-                    <p>Hu, J., & Datta-Barua, S. (<span class="date">2024</span>). Data assimilation of ion drift measurements for estimation of ionospheric plasma drivers. Coupling, Energetics and Dynamics of Atmospheric Regions (CEDAR), San Diego, CA, USA.</p>
+                    <p>Hu, J., &amp; Datta-Barua, S. (<span class="date">2024</span>). Data assimilation of ion drift measurements for estimation of ionospheric plasma drivers. Coupling, Energetics and Dynamics of Atmospheric Regions (CEDAR), San Diego, CA, USA.</p>
                 </article>
                 <article class="publication-item">
-                    <p>Hu, J., López Rubio, A., & Datta-Barua, S. (<span class="date">2023</span>). Observation error quantification and analysis in data assimilation. Advancing National Space Weather Expertise and Research toward Societal Resilience (ANSWERS) student workshop, virtual.</p>
+                    <p>Hu, J., López Rubio, A., &amp; Datta-Barua, S. (<span class="date">2023</span>). Observation error quantification and analysis in data assimilation. Advancing National Space Weather Expertise and Research toward Societal Resilience (ANSWERS) student workshop, virtual.</p>
                 </article>
             </div>
         </section>
@@ -243,7 +260,7 @@
         </main>
 
         <aside class="sidebar">
-            <nav class="site-nav">
+            <nav class="site-nav" aria-label="Sections">
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#current-project">Current Projects</a></li>
@@ -256,8 +273,13 @@
         </aside>
     </div>
 
+    <dialog id="figure-dialog" class="figure-dialog">
+        <button class="figure-dialog-close" type="button" data-close-dialog>Close</button>
+        <img id="figure-dialog-img" alt="">
+    </dialog>
+
     <footer>
-        <p>&copy; 2026 Jiahui Hu.</p>
+        <p>&copy; 2026 Jiahui Hu. <a href="https://orcid.org/0000-0003-1998-126X" target="_blank" rel="noopener noreferrer">ORCID 0000-0003-1998-126X</a></p>
     </footer>
 
     <script src="script.js"></script>
